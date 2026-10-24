@@ -849,6 +849,8 @@ CONTENT.roles.client.goal='Подобрать оборудование под з
 // Existing tall glass cabinet contains the optical samples; the separate low cabinet is removed.
 const crystalStands=new THREE.Group();crystalStands.name='Содержимое правой стеклянной витрины';crystalStands.position.set(4.2,.35,3.975);growthCabinet.add(crystalStands);
 const champagneMetal=mat('#b7a78b',.7,.24);
+const cabinetGlass=new THREE.MeshPhysicalMaterial({color:'#edf1f0',roughness:.025,metalness:0,transmission:.85,thickness:.006,transparent:true,opacity:.05,depthWrite:false,side:THREE.DoubleSide});
+for(const o of growthCabinet.children)if(o.name.includes('Стекло')||o.name.includes('Стеклянный торец'))o.material=cabinetGlass;
 box('Внутренняя полка для кристалла и активного элемента',0,.867,0,1.54,.055,.82,C.white,.018,crystalStands);
 box('Тонкая кромка внутренней полки',0,.835,0,1.54,.012,.82,champagneMetal,.003,crystalStands);
 for(const o of [...projectionGroup.children])if(o.name.includes('Матовая проекционная')||o===projectionMesh||o.name.includes('проектoр')||o===projector||o.name.includes('отдельное крепление'))projectionGroup.remove(o);
