@@ -89,6 +89,7 @@ const opts=document.createElement('details');opts.innerHTML='<summary>Сцена
 const acts=q('[data-acts]');view.append(acts);
 const tools=document.createElement('details');tools.className='studio-tools';tools.innerHTML='<summary>Демонстрации и опыты</summary><div class="studio-tool-grid"></div>';grid.after(tools);const tg=tools.querySelector('div');tg.append(q('.projection-controls'),q('.machine-controls'),q('.experience'));
 for(const d of root.querySelectorAll(':scope>details')){if(d!==tools){d.classList.add('studio-root-details');}}
+const focusStage=()=>{const r=screen.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)screen.scrollIntoView({block:'start',behavior:'smooth'});};for(const sel of ['[data-hero]','[data-crystal-view]','[data-ceiling-view]','[data-art-side]','[data-history-view]','[data-plan]','[data-play]'])q(sel).addEventListener('click',focusStage);q('[data-room]').addEventListener('change',focusStage);
 q('[data-fullscreen]').onclick=async()=>{if(document.fullscreenElement)await document.exitFullscreen();else await screen.requestFullscreen();};document.addEventListener('fullscreenchange',()=>q('[data-fullscreen]').textContent=document.fullscreenElement?'Выйти из полного экрана':'На весь экран');
 })();
 </script>
