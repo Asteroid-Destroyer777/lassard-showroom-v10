@@ -44,7 +44,7 @@ body{background:#f5f5f7;color:#1d1d1f}main{max-width:1700px;padding:0 36px 40px}
 <div class="lp-stage" role="img" aria-label="Шоурум LASSARD: кристаллы у входа, подвесная надпись из трубок и оборудование под задачу заказчика"><span data-loading style="color:#eee;padding:20px;display:block">Загрузка пространства…</span></div>
 <div class="lp-controls">
 <button class="btn btn-primary" type="button" data-play disabled>Начать маршрут клиента</button>
-<button class="btn" type="button" data-hero disabled>Главный ракурс</button><button class="btn" type="button" data-crystal-view>Кристалл слева</button><button class="btn" type="button" data-ceiling-view>Ракурс LASSARD</button><button class="btn" type="button" data-art-side>Трубки сбоку</button><button class="btn" type="button" data-history-view>История LASSARD</button><button class="btn" type="button" data-deal-view>Подобрать решение</button>
+<button class="btn" type="button" data-hero disabled>Главный ракурс</button><button class="btn" type="button" data-crystal-view>Кристалл за стеклом</button><button class="btn" type="button" data-ceiling-view>Ракурс LASSARD</button><button class="btn" type="button" data-art-side>Трубки сбоку</button><button class="btn" type="button" data-history-view>История LASSARD</button><button class="btn" type="button" data-deal-view>Подобрать решение</button>
 <a class="btn walk-link" href="walk.html" target="_blank" rel="noopener">Свободная прогулка ↗</a>
 <button class="btn" type="button" data-plan disabled>План / обзор</button>
 <label class="form-label">Зона <select class="form-select" data-room aria-label="Выбрать зону"></select></label>
@@ -324,7 +324,7 @@ const projector=new THREE.Group();projector.name='Один потолочный 
 box('Проектор / корпус',0,0,0,.5,.24,.42,C.black,.025,projector);const projectionLens=cyl('Проектор / объектив',0,0,.25,.07,.1,C.steel,24,projector);projectionLens.rotation.x=Math.PI/2;
 beam('Проектор / отдельное крепление',[4.2,4.7,5.8],[4.2,6.8,5.8],.016,C.steel,projectionGroup);
 const projectionScenes=[
- {title:'ОТ КРИСТАЛЛА',sub:'Собственные компетенции. Контроль материала.',detail:'0–15 секунд. Одна витрина слева показывает кристалл и готовый активный элемент. Инженер спрашивает о материале и операции заказчика.'},
+ {title:'ОТ КРИСТАЛЛА',sub:'Собственные компетенции. Контроль материала.',detail:'0–15 секунд. Одна высокая витрина справа показывает кристалл и готовый активный элемент. Инженер спрашивает о материале и операции заказчика.'},
  {title:'УПРАВЛЯТЬ МАТЕРИАЛОМ',sub:'От структуры — к свойствам',detail:'15–35 секунд. Условная схема роста VGF переходит в карту компетенций. Настоящее выращивание не происходит во входной витрине.'},
  {title:'СОБРАТЬ ТОЧНОСТЬ',sub:'Материал · компоненты · настройка · контроль',detail:'35–55 секунд. Показаны разные технологические ветви. Это карта компетенций, не утверждение, что каждый станок состоит из одного GaAs-кристалла.'},
  {title:'ВАША ЗАДАЧА',sub:'Что должно быть доказано на вашей детали?',detail:'55–75 секунд. Гость называет материал, операцию и свой критерий. Его вопрос становится основой дальнейшего маршрута и паспорта испытания.'}
@@ -839,28 +839,21 @@ finalConcept.hook='У входа видны кристаллы и этапы в�
 finalConcept.ending='Техническое задание на решение: операция, материал, выпуск, качество, срок внедрения, ответственный и следующий шаг.';
 finalConcept.ceiling='LASSARD / точка сборки';finalConcept.ceilingMeaning='Подвесная композиция из красных трубок. С отмеченной точки объёмные фрагменты складываются в LASSARD; при смещении раскрывается их пространственная глубина.';
 finalConcept.acts=[
- {time:'0–5 мин',title:'Кристалл → контроль материала',key:'growth',voice:'«Мы начинаем с материала, потому что хотим управлять результатом. Какая операция и какая деталь нужны вашему предприятию?»',action:'Рассмотреть одну витрину слева: прозрачную заготовку и готовый активный элемент. Связать материал с задачей предприятия.',proof:'Зафиксированы материал и задача заказчика.'},
+ {time:'0–5 мин',title:'Кристалл → контроль материала',key:'growth',voice:'«Мы начинаем с материала, потому что хотим управлять результатом. Какая операция и какая деталь нужны вашему предприятию?»',action:'Рассмотреть высокую стеклянную витрину справа: прозрачную заготовку и готовый активный элемент. Связать материал с задачей предприятия.',proof:'Зафиксированы материал и задача заказчика.'},
  {time:'5–11 мин',title:'Компетенции → доверие',key:'history',voice:'«Вот как мы наращивали производство. Покажем компетенции и узлы, которые относятся именно к вашему решению».',action:'Коротко показать историю на одной панели и обсудить ответственность за выбранную конфигурацию.',proof:'Определены конфигурация и вопросы к комплектующим.'},
  {time:'11–22 мин',title:'Станок → ваша операция',key:'dry',voice:'«Сначала выберем оборудование под операцию. Затем подтвердим качество на вашей детали и согласованном режиме».',action:'Сравнить оборудование, посмотреть цифровой сухой цикл и согласовать тест материала клиента.',proof:'Есть кандидат на решение и программа испытания.'},
  {time:'22–28 мин',title:'Результат → критерий приёмки',key:'measure',voice:'«Что принимаем: кромку, точность, шов, маркировку? Утвердим измеримый критерий до испытания».',action:'Рассмотреть обработанный образец, выбрать метод контроля и согласовать требуемый выпуск.',proof:'Качество и производительность включены в ТЗ.'},
  {time:'28–35 мин',title:'Решение → следующий шаг сделки',key:'decision',voice:'«Соберём состав поставки, запуск, обучение и сервис. Кто и когда согласует тест и техническое предложение?»',action:'Заполнить ТЗ на решение и зафиксировать ответственного, срок теста и состав технического предложения.',proof:'Встреча завершена конкретным следующим шагом к поставке.'}
 ];
 CONTENT.roles.client.goal='Подобрать оборудование под задачу предприятия и согласовать условия проверки.';CONTENT.roles.client.deliverable='ТЗ на решение → тест детали → техническое предложение → поставка.';
-// One low crystal vitrine on the left. The public gallery and instrument views remain open.
-const crystalStands=new THREE.Group();crystalStands.name='ВХОД / одна витрина лазерного кристалла слева';crystalStands.position.set(1.50,0,4.95);decor.add(crystalStands);
-const plinthSkin=mat('#323338',.45,.25),champagneMetal=mat('#b7a78b',.7,.24);
-box('Одна низкая витрина / основание',0,.42,0,1.65,.84,.73,plinthSkin,.035,crystalStands,true);
-box('Витрина / сатинированная крышка',0,.867,0,1.68,.055,.76,C.white,.018,crystalStands);
-box('Витрина / тонкая металлическая кромка',0,.835,0,1.68,.012,.76,champagneMetal,.003,crystalStands);
-box('Утопленный цоколь витрины',0,.065,0,1.5,.13,.60,C.black,.015,crystalStands);
-text('ОТ КРИСТАЛЛА ДО РЕШЕНИЯ',0,.55,.375,1.47,.14,'#f1e6d5',0,false,crystalStands);
-text('ЛАЗЕРНЫЙ КРИСТАЛЛ / АКТИВНЫЙ ЭЛЕМЕНТ',0,.31,.376,1.47,.10,'#b5b8b5',0,false,crystalStands);
-strip([-.64,.115,.38],[.64,.115,.38],C.led,.005,crystalStands);
-const caseGlass=new THREE.MeshPhysicalMaterial({color:'#edf1f0',roughness:.025,metalness:0,transmission:.85,thickness:.006,transparent:true,opacity:.05,depthWrite:false,side:THREE.DoubleSide});
-for(const zz of [-.34,.34])box('Прозрачное стекло новой витрины',0,1.36,zz,1.60,.94,.006,caseGlass,0,crystalStands);
-for(const xx of [-.8,.8])box('Торец новой витрины',xx,1.36,0,.006,.94,.68,caseGlass,0,crystalStands);
-box('Стеклянная крышка новой витрины',0,1.83,0,1.60,.006,.68,caseGlass,0,crystalStands);
-for(const xx of [-.79,.79])for(const zz of [-.33,.33])beam('Тонкая стойка витрины',[xx,.9,zz],[xx,1.83,zz],.0035,champagneMetal,crystalStands);
+// Existing tall glass cabinet contains the optical samples; the separate low cabinet is removed.
+const crystalStands=new THREE.Group();crystalStands.name='Содержимое правой стеклянной витрины';crystalStands.position.set(4.2,.35,3.975);growthCabinet.add(crystalStands);
+const champagneMetal=mat('#b7a78b',.7,.24);
+box('Внутренняя полка для кристалла и активного элемента',0,.867,0,1.54,.055,.82,C.white,.018,crystalStands);
+box('Тонкая кромка внутренней полки',0,.835,0,1.54,.012,.82,champagneMetal,.003,crystalStands);
+for(const o of [...projectionGroup.children])if(o.name.includes('Матовая проекционная')||o===projectionMesh||o.name.includes('проектoр')||o===projector||o.name.includes('отдельное крепление'))projectionGroup.remove(o);
+for(const o of [...growthCabinet.children])if(o!==crystalStands&&!o.name.includes('Стекло')&&!o.name.includes('Стеклянный торец'))growthCabinet.remove(o);
+text('КРИСТАЛЛ / ГОТОВЫЙ ЭЛЕМЕНТ',4.2,.17,4.215,1.47,.105,'#eee5d6',0,false,projectionGroup);
 function facetedCrystalGeo(profile,N=10){
  const vertices=[];function tri(a,b,c){vertices.push(...a,...b,...c);}const p=(j,r,y)=>[Math.cos(j/N*Math.PI*2)*r,y,Math.sin(j/N*Math.PI*2)*r];
  for(let k=1;k<profile.length;k++){const [ya,ra]=profile[k-1],[yb,rb]=profile[k];for(let j=0;j<N;j++){const a=p(j,ra,ya),b=p(j+1,ra,ya),c=p(j,rb,yb),d=p(j+1,rb,yb);tri(a,c,b);tri(b,c,d);}}
@@ -875,9 +868,9 @@ const cutRod=cyl('Nd:YAG / полированный активный элеме�
 for(const xx of [.13,.51])box('Миниатюрная опора активного элемента',xx,.963,0,.024,.11,.18,champagneMetal,.005,crystalStands);
 const wafer=cyl('GaAs / контрольный образец в кассете',.42,.914,.21,.07,.006,mat('#333d47',.7,.18),48,crystalStands);
 text('ЗАГОТОВКА',-.33,.905,.26,.50,.075,'#5d5f5f',0,false,crystalStands);text('ГОТОВЫЙ ЭЛЕМЕНТ',.34,.905,.28,.60,.075,'#5d5f5f',0,false,crystalStands);
-const vitrineSpot=new THREE.SpotLight('#f0e7ff',24,5,.50,.8,1.4);vitrineSpot.position.set(1.25,3.7,5.7);vitrineSpot.target.position.set(1.2,1.35,4.95);scene.add(vitrineSpot,vitrineSpot.target);
-const crystalRim=new THREE.PointLight('#a9d7ed',3.5,2.2,2);crystalRim.position.set(1.55,1.55,4.55);scene.add(crystalRim);
-stationBounds.push({name:'Единственная витрина слева',min:[.65,0,4.58],max:[2.35,1.85,5.32]});
+const vitrineSpot=new THREE.SpotLight('#f0e7ff',24,5,.50,.8,1.4);vitrineSpot.position.set(4,3.7,4.4);vitrineSpot.target.position.set(4.15,1.7,3.975);scene.add(vitrineSpot,vitrineSpot.target);
+const crystalRim=new THREE.PointLight('#a9d7ed',3.5,2.2,2);crystalRim.position.set(4.65,2,3.65);scene.add(crystalRim);
+
 // Clear the projection vitrine: its screen and glass are visible without a pedestal in front.
 for(const layer of Object.values(conceptLayers))for(const o of [...layer.children]){if(Math.abs(o.position.x-5.05)<.75&&Math.abs(o.position.z-5)<.6&&!o.userData.overhead)layer.remove(o);}
 layersObject.visible=false;
@@ -894,18 +887,18 @@ for(let i=0;i<pendantPlaces.length;i++){
 }
 const tickOriginalGrowth=tickGrowth;
 tickGrowth=function(dt){tickOriginalGrowth(dt);const u=growthDemo.t/growthDemo.duration;entryGrowth.scale.y=.06+.94*u;};
-function crystalsView(){showInterior();scene.fog.density=.009;state.playing=false;state.mode='crystals';camera.fov=53;camera.position.set(2.95,1.68,7.5);target.set(1.5,1.25,4.95);camera.lookAt(target);camera.updateProjectionMatrix();title('Одна витрина / кристалл и готовый элемент','Прозрачная заготовка и отполированный активный элемент показаны крупно в одной витрине слева. Центральная галерея и приборы справа остаются открытыми для обзора.');updatePlay();invalidate();}
-$('[data-crystal-view]').onclick=crystalsView;
+function crystalsView(){showInterior();scene.fog.density=.009;state.playing=false;state.mode='crystals';camera.fov=53;camera.position.set(2.7,1.95,7.3);target.set(4.2,1.55,3.975);camera.lookAt(target);camera.updateProjectionMatrix();title('Одна витрина / кристалл и готовый элемент','Кристалл, полированный активный элемент и контрольный образец перенесены в высокую стеклянную витрину справа. Отдельная низкая витрина убрана.');updatePlay();invalidate();}
+projectorView=crystalsView;$('[data-projector-view]').onclick=crystalsView;$('[data-crystal-view]').onclick=crystalsView;
 startGrowth=function(){crystalsView();setProjection(1);growthDemo.t=0;growthDemo.active=true;tickGrowth(0);invalidate();};$('[data-growth-start]').onclick=()=>{startGrowth();stage.scrollIntoView({block:'center'});};
-Object.assign(stops.growth,{zone:1,p:[2.95,1.68,7.5],look:[1.5,1.25,4.95]});
+Object.assign(stops.growth,{zone:1,p:[2.7,1.95,7.3],look:[4.2,1.55,3.975]});
 Object.assign(stops.entry,{name:'От кристалла до решения',p:[.8,1.85,8.1],look:[12.5,2.7,9.2]});
 Object.assign(stops.history,{zone:2,name:'История LASSARD / одна панель',p:[3.1,2.1,11.2],look:[3,3.9,D-.2]});
 function historyView(){showInterior();state.playing=false;state.mode='history';camera.fov=48;camera.position.set(5.4,2.5,11.7);target.set(3,3.9,D-.2);camera.lookAt(target);camera.updateProjectionMatrix();title('История LASSARD / собственное производство с 2015 года','Одна историческая панель объединяет вехи развития компании. Остальные медиапанели показывают декоративную графику света и спектров.');updatePlay();invalidate();}
 $('[data-history-view]').onclick=historyView;
 const easterEggs=[
  {id:'origin',title:'2015 / скрытое начало',p:[7.8,1.45,9.9],look:[8.2,.95,10.75],text:'2015 — основание компании. Историческая панель показывает, как росли производственные компетенции и что это даёт заказчику.'},
- {id:'diameter',title:'100 мм / смена масштаба',p:[3.65,1.15,10.35],look:[3.7,.83,11.07],text:'Небольшое кольцо на столе имеет диаметр 100 мм — отсылка к номинальному диаметру монокристаллов в карточке LASSARD. У входа слева показаны оптическая заготовка и отполированный активный элемент. GaAs представлен отдельно в зоне компонентов.'},
- {id:'crystal',title:'Лазерный кристалл / готовый элемент',p:[2.95,1.68,7.5],look:[1.5,1.25,4.95],text:'Одна витрина слева: прозрачная заготовка, отполированный лазерный элемент и небольшой контрольный образец. Приборы справа открыты для обзора.'},
+ {id:'diameter',title:'100 мм / смена масштаба',p:[3.65,1.15,10.35],look:[3.7,.83,11.07],text:'Небольшое кольцо на столе имеет диаметр 100 мм — отсылка к номинальному диаметру монокристаллов в карточке LASSARD. В высокой витрине у входа показаны оптическая заготовка и отполированный активный элемент. GaAs представлен отдельно в зоне компонентов.'},
+ {id:'crystal',title:'Лазерный кристалл / готовый элемент',p:[2.7,1.95,7.3],look:[4.2,1.55,3.975],text:'Одна высокая витрина справа: прозрачная заготовка, отполированный лазерный элемент и небольшой контрольный образец. Приборы справа открыты для обзора.'},
  {id:'fibre',title:'LASSARD / точка сборки',p:[1.5,1.75,8.8],look:[12.7,5.25,8.8],text:'Разнесённые в глубину красные трубки складываются в LASSARD с отмеченной точки. Имя компании связывает компетенции в одно решение.'},
  {id:'sample',title:'Одна метка / возврат к детали',p:[32.8,1.3,10.4],look:[32.8,.83,11.4],text:'Контрольная метка образца возвращает к вопросу у входа. В реальном сценарии номер на образце должен совпадать с номером протокола. Нельзя подменять испытание клиента подготовленным примером.'},
  {id:'floor',title:'Грани / тихая структура пола',p:[4.4,1.75,8],look:[3.1,.01,9.75],text:'Редкая кристаллическая геометрия видна вблизи зоны материала. По маршруту она становится спокойнее. Это декоративная структура, не кристаллографическая диаграмма и не навигация безопасности.'}
@@ -946,12 +939,12 @@ for(const b of root.querySelectorAll('[data-walk-key]')){b.onpointerdown=e=>{e.p
 const target=new THREE.Vector3(18,2.4,8);let lastKey='',activeTime=0,clockNow=0;
 function title(a,b){$('[data-title]').textContent=a;$('[data-detail]').textContent=b;}
 function showInterior(){for(const g of Object.values(conceptLayers))g.children.forEach(o=>{if(o.userData.overhead)o.visible=true;});shell.visible=true;ceiling.visible=true;engineering.visible=true;state.plan=false;accessLayer.visible=false;}
-function hero(){showInterior();state.playing=false;state.mode='hero';camera.fov=68;camera.position.set(.35,1.9,7.8);target.set(13.5,2.75,9.0);camera.lookAt(target);camera.updateProjectionMatrix();title(CONTENT.concepts.find(c=>c.id===state.concept).name+' / пространство решения','Кристалл встречает клиента в одной витрине слева. История собрана на одной панели. Оборудование, контроль образца и стол решения ведут к конкретной поставке.');updatePlay();}
+function hero(){showInterior();state.playing=false;state.mode='hero';camera.fov=68;camera.position.set(.35,1.9,7.8);target.set(13.5,2.75,9.0);camera.lookAt(target);camera.updateProjectionMatrix();title(CONTENT.concepts.find(c=>c.id===state.concept).name+' / пространство решения','Кристалл встречает клиента в правой стеклянной витрине. История собрана на одной панели. Оборудование, контроль образца и стол решения ведут к конкретной поставке.');updatePlay();}
 function plan(){for(const g of Object.values(conceptLayers))g.children.forEach(o=>{if(o.userData.overhead)o.visible=false;});state.playing=false;state.mode='plan';state.plan=true;ceiling.visible=false;engineering.visible=false;shell.visible=false;scene.fog.density=0;camera.fov=48;camera.position.set(18,43,12);target.set(18,0,8.7);camera.lookAt(target);camera.updateProjectionMatrix();updateAccessLayer();title('План доступа / '+scenarios[state.role].name,'Красным показаны зоны, закрытые для выбранной аудитории. Открытые столы доступны. Рабочие ячейки отделены корпусами. Геометрия требует обмера.');updatePlay();}
 function roomView(id){if(!scenarios[state.role].allowedZones.includes(id)){title('Доступ ограничен',scenarios[state.role].policy);invalidate();return false;}showInterior();scene.fog.density=.009;state.playing=false;state.mode='room';const shot=shots[id-1];camera.fov=shot.fov||62;camera.position.fromArray(shot.p);target.fromArray(shot.look);camera.lookAt(target);camera.updateProjectionMatrix();const st=Object.values(stops).find(s=>s.zone===id);title(String(id).padStart(2,'0')+' / '+M.zones.find(z=>z.id===id).name,st.detail);updatePlay();}
 const shots=[
  {name:'01_Вход',p:[.9,1.75,5.75],look:[3.4,2.5,2.1],fov:68},
- {name:'02_Кристалл_слева',p:[2.95,1.68,7.5],look:[1.5,1.25,4.95],fov:53},
+ {name:'02_Кристалл_слева',p:[2.7,1.95,7.3],look:[4.2,1.55,3.975],fov:53},
  {name:'03_Диоды',p:[6.7,1.75,10.8],look:[8.4,2.1,14.7],fov:62},
  {name:'04_Квантроны',p:[11.1,1.75,10.8],look:[12.9,2,14.6],fov:62},
  {name:'05_Лазерные_источники',p:[15.5,1.75,10.6],look:[17.4,2,14.6],fov:62},
